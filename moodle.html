@@ -2,33 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>ENGMT280 Outline – Dark Mode Preview</title>
+  <title>ENGMT280 Outline – Dark Mode</title>
   <style>
     html, body {
       margin: 0;
       background: #121212;
-      color: #eee;
+      overflow: hidden;
       font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
     iframe {
+      position: absolute;
+      top: -100px; /* Push the banner off screen */
+      left: 0;
+      width: 100%;
+      height: calc(100vh + 100px); /* Pull in extra height so scroll works */
       border: none;
-      width: 100vw;
-      height: 100vh;
       filter: invert(1) hue-rotate(180deg) brightness(0.9) contrast(1.1);
     }
 
     h1 {
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
+      position: fixed;
+      top: 10px;
+      left: 20px;
+      margin: 0;
       color: #90caf9;
-      z-index: 999;
+      z-index: 10;
+      font-size: 20px;
+      background: rgba(18, 18, 18, 0.9);
+      padding: 5px 10px;
+      border-radius: 8px;
     }
   </style>
 </head>
 <body>
-  <h1>ENGMT280 (Fake Dark Mode)</h1>
-  <iframe src="https://paperoutlines.waikato.ac.nz/outline/ENGMT280-25B%20(HAM)"></iframe>
+  <h1>ENGMT280 Paper Outline</h1>
+  <iframe 
+    src="https://paperoutlines.waikato.ac.nz/outline/ENGMT280-25B%20(HAM)" 
+    allowfullscreen>
+  </iframe>
 </body>
 </html>
