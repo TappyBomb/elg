@@ -2,44 +2,103 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>ENGMT280 Outline – Dark Mode</title>
+  <title>My Uni Dashboard</title>
   <style>
-    html, body {
+    * {
+      box-sizing: border-box;
       margin: 0;
-      background: #121212;
-      overflow: hidden;
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      padding: 0;
     }
 
-    iframe {
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #0e0e0e;
+      color: white;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 100vh;
+    }
+
+    .card {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card:hover .image {
+      filter: grayscale(0%);
+      transform: scale(1.05) translateY(-20px);
+    }
+
+    .card:hover .title {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%);
+      transition: all 0.4s ease;
+    }
+
+    .title {
       position: absolute;
-      top: -120px; /* Push the banner off screen */
+      bottom: 20px;
       left: 0;
       width: 100%;
-      height: calc(120vh + 120px); /* Pull in extra height so scroll works */
-      border: none;
-      filter: invert(1) hue-rotate(180deg) brightness(0.9) contrast(1.1);
+      text-align: center;
+      font-size: 1.5em;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px 0;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.4s ease;
     }
 
-    h1 {
-      position: fixed;
-      top: 10px;
-      left: 20px;
-      margin: 0;
-      color: #90caf9;
-      z-index: 10;
-      font-size: 20px;
-      background: rgba(18, 18, 18, 0.9);
-      padding: 5px 10px;
-      border-radius: 8px;
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .card {
+        height: 20vh;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>ENGMT280 Paper Outline</h1>
-  <iframe 
-    src="https://paperoutlines.waikato.ac.nz/outline/ENGMT280-25B%20(HAM)" 
-    allowfullscreen>
-  </iframe>
+  <div class="container">
+    <div class="card" onclick="window.open('https://paperoutlines.waikato.ac.nz/outline/ENGMT280-25B%20(HAM)', '_blank')">
+      <img class="image" src="https://source.unsplash.com/random/800x600?engineering" alt="Paper 1">
+      <div class="title">ENGMT280</div>
+    </div>
+    <div class="card">
+      <img class="image" src="https://source.unsplash.com/random/800x600?code" alt="Paper 2">
+      <div class="title">COMPX234</div>
+    </div>
+    <div class="card">
+      <img class="image" src="https://source.unsplash.com/random/800x600?math" alt="Paper 3">
+      <div class="title">ENGME200</div>
+    </div>
+    <div class="card">
+      <img class="image" src="https://source.unsplash.com/random/800x600?ai" alt="Paper 4">
+      <div class="title">ENGME290</div>
+    </div>
+    <div class="card">
+      <img class="image" src="https://source.unsplash.com/random/800x600?robotics" alt="Paper 5">
+      <div class="title">ENGCV212</div>
+    </div>
+  </div>
 </body>
 </html>
