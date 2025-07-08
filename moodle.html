@@ -2,58 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Moodle Dashboard</title>
+  <title>ENGMT280 Paper Outline (Dark Mode)</title>
   <style>
-    body {
+    body, html {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: #1e1e1e;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      height: 100%;
     }
-
-    h1 {
-      margin-top: 40px;
-    }
-
-    .iframe-container {
-      margin-top: 20px;
-      width: 90%;
-      max-width: 1200px;
-      height: 80vh;
-      border: 2px solid #333;
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
     iframe {
       width: 100%;
       height: 100%;
       border: none;
-    }
-
-    .fallback {
-      color: #ccc;
-      font-size: 16px;
-      padding: 20px;
-      text-align: center;
+      filter: invert(1) hue-rotate(180deg);
+      background: #000;
     }
   </style>
 </head>
 <body>
-  <h1>📚 Moodle – University of Waikato</h1>
-
-  <div class="iframe-container">
-    <iframe src="https://elearn.waikato.ac.nz/my/" loading="lazy">
-      <p class="fallback">
-        Your browser does not support iframes.
-        <br>
-        Or Moodle has blocked embedding. <br>
-        <a href="https://elearn.waikato.ac.nz/my/" target="_blank" style="color:#90caf9;">Click here to open Moodle directly</a>
-      </p>
-    </iframe>
-  </div>
+  <iframe src="https://paperoutlines.waikato.ac.nz/outline/ENGMT280-25B%20(HAM)"></iframe>
 </body>
 </html>
